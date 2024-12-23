@@ -1,0 +1,24 @@
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blog-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.blog-title {
+  margin-bottom: 10px;
+}
+
+.blog-description {
+  margin-bottom: 10px;
+}
