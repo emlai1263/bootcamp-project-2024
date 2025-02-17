@@ -1,9 +1,12 @@
+import React from "react";
+import style from "../page.module.css";
+
 export default function Resume() {
   return (
-    <div>
-      <h1 className="page-title">Resume</h1>
-      <a href="./resume.pdf" download>
-        Download resume
+    <div className={style.page}>
+      <h1>Resume</h1>
+      <a href="./EmilyLaiResume.pdf" download>
+        Download my resume
       </a>
       <main className="page-title">
         <div className="resume">

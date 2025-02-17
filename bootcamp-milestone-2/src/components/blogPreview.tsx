@@ -8,15 +8,16 @@ export default function BlogPreview(props: Blog) {
 
   return (
     <div className={style.div}>
-      <h3> {title} </h3>
-      <div className={style.imgWrapper}>
+      <div className={style.contentWrapper}>
         <h1 className={style.title}>{title}</h1>
         <p className={style.date}>{date}</p>
-        <img src={image} alt={imageAlt} />
         <p className={style.textCenter}>{description}</p>
         <Link href={`/blog/${slug}`} className={style.link}>
           Read full post
         </Link>
+      </div>
+      <div className={style.imgWrapper}>
+        <img src={image} alt={imageAlt} />
       </div>
     </div>
   );

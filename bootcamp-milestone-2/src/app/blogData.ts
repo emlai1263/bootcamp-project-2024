@@ -9,32 +9,29 @@ export type Blog = {
 
 const blogs: Blog[] = [
   {
-    title: "Hello World! My First Blog Post",
-    date: "10-24-2024",
-    description:
-      "Welcome to my first blog post :) Unfortunately, midterms are about to hit :(",
-    image: "/pusheen.png",
-    imageAlt: "Pusheen the Cat",
-    slug: "firstpost",
+    title:"'First' Blog",
+    date:"2025-02-16",
+    description:"Fresh start I suppose",
+    image:"/Cherrim.png",
+    imageAlt:"Cherrim",
+    slug:"cherrim"
   },
-  // {
-  //   title: "#2: more about me",
-  //   date: "10-24-2024",
-  //   description:
-  //     "I'm a computer science student at Cal Poly SLO. I love cute characters and video games!",
-  //   image: "/Cherrim.png",
-  //   imageAlt: "A drawing Cherrim (my favorite Pokemon)",
-  //   slug: "about-me",
-  // },
   {
-    title: "#2: Happy new year!",
-    date: "1-5-2024",
-    description:
-      "It's a bit late though haha. Even though it jasn't been too long since new years, Cal Poly's winter quarter is about to start :O",
-    image: "/dance-maltese.png",
-    imageAlt: "A dog dancing",
-    slug: "happy-new-year",
+    title:"Hello again",
+    date:"2025-02-16",
+    description:"Meet the Maltese",
+    image:"/dance-maltese.png",
+    imageAlt:"maltese dancing",
+    slug:"maltese"
   },
+  {
+    title:"Winter quarter blues",
+    date:"2025-02-16",
+    description:"Winter quarter is tough, glad to have a logn weekend to rest and catch up ^^",
+    image:"/pusheen-crying.png",
+    imageAlt:"Pusheen the cat crying",
+    slug:"winter-quarter"
+  }
 ];
 
 export default blogs;

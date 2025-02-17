@@ -1,5 +1,5 @@
 import blogs from "@/app/blogData.ts";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
 import BlogPreview from "@/components/blogPreview";
 import Footer from "@/components/footer";
 import type { Metadata } from "next"; // Object to set metadata

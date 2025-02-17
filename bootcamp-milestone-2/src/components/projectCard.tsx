@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 
 interface ActionAreaCardProps {
-  link: string;
+  link?: string;
   image: string;
   alt: string;
   heading: string;
@@ -14,26 +14,30 @@ interface ActionAreaCardProps {
 }
 
 export default function ActionAreaCard({ link, image, alt, heading, text }: ActionAreaCardProps) {
+  const cardContent = (
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        image={image}
+        alt={alt}
+        sx={{ maxHeight: 300, objectFit: 'cover' }}
+      />
+      <CardContent>
+        <h2>{heading}</h2>
+        <p>{text}</p>
+      </CardContent>
+    </CardActionArea>
+  );
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="90%"
-            image={image}
-            alt={alt}
-          />
-          <CardContent>
-            <h2>
-              {heading}
-            </h2>
-            <p>
-              {text}
-            </p>
-          </CardContent>
-        </CardActionArea>
-      </a>
+    <Card sx={{ maxWidth: 345}}>
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          {cardContent}
+        </a>
+      ) : (
+        cardContent
+      )}
     </Card>
   );
 }
