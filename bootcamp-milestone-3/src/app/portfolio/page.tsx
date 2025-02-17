@@ -2,29 +2,41 @@ import React from "react";
 import Link from "next/link";
 import portfolio from "./portfolio.module.css";
 import style from "../page.module.css";
-import ActionAreaCard from "@/components/projectCard"
+import ActionAreaCard from "@/components/projectCard";
+import Project from "@/database/projectSchema";
+import connectDB from "@/database/db";
 
+// Function to fetch projects from the database
+async function getProjects() {
+  await connectDB();
 
-export default function Portfolio() {
+  try {
+    const projects = await Project.find().sort({ heading: 1 }).orFail(); // Sort projects alphabetically by heading
+    return projects;
+  } catch (err) {
+    console.log(err);
+    return [];
+  }
+}
+
+export default async function Portfolio() {
+  const projects = await getProjects();
+
   return (
     <div className={style.page}>
-      <h1 >Portfolio</h1>
+      <h1>Portfolio</h1>
       <div className={style.portfolio}>
-        <ActionAreaCard
-          link="https://www.polyplanner.pro"
-          image="/PPPicon.png"
-          alt="Poly Planner Pro logo"
-          heading="Poly Planner Pro"
-          text="Ongoing Software Engineering capstone with Cal Poly's Engineering Student Services. Poly Planner Pro is a visual flowchart build that helps students plan their classes and verify degree requirements for the transition to the semester system."
-        />
-        <ActionAreaCard
-          link=""
-          image="/designSpecImg.png"
-          alt="Wireframe of catalog collections app"
-          heading="Catalog Collections Mobile app"
-          text="Ongoing mobile app project that allows users log items in a collection (stickers, plushies, etc), and tag them for easy lookup. The image above is the wireframe"
-        />
-          </div>
-        </div>
+        {projects.map((project) => (
+          <ActionAreaCard
+            key={project._id}
+            link={project.link}
+            image={project.image}
+            alt={project.alt}
+            heading={project.heading}
+            text={project.text}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
