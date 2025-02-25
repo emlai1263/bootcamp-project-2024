@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.4",
     "bootcamp-milestone-2": "file:",
+    "moment-timezone": "^0.5.47",
     "mongodb": "^6.13.0",
     "mongoose": "^8.10.1",
     "next": "15.1.3",

@@ -1,3 +1,9 @@
+.commentsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
 .blogPage {
     display: flex;
     flex-direction: column;
